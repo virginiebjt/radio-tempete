@@ -31,4 +31,36 @@ Run the following commands in your terminal
   `mpc play`
  
  If everything's working well you should hear the music!
+
+## Make the radio play on boot
+
+You don't want to launch the script by yourself everytime you want to listen to music! So let's make the radio start when you boot your Raspberry Pi.
+
+Write a bash script (name it however you want, I named it radiotempete) 
+`sudo nano radiotempete.sh`
+
+This will open a text editor in your terminal, with an empty page. Copy paste the following commands:
+`#!/bin/bash
+mpc add https://listen.radioking.com/radio/372772/stream/422929
+mpc play
+mpc volume 50
+`
+(I have set the volume to 50 instead of 100 because my radio was too loud, but it's optional).
+
+Do Ctrl O and Ctrl X to save and quit.
+
+
+Then, we'll be telling the Raspberry to start this bash script on startup.
+
+Open your terminal and type
+`sudo nano /etc/rc.local`
+
+And copy paste this **before exit 0**
+`# Radio tempete
+/home/pi/radiotempete.sh`
+
+Save and quit (Ctrl O, Ctrl X).
+
+Finally, test if it works: type sudo reboot in your terminal. The Rabsperry will restart, and should be playing Radio Tempête (or your station) straight away!
+
  
