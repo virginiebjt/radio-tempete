@@ -20,9 +20,9 @@ Connect your Raspberry Pi to a keyboard, mouse and screen, or control it with yo
 Install Music Player Daemon. This will play any webradio stream. 
 Run the following commands in your terminal
  
- `sudo apt-get update
- sudo apt-get upgrade
- sudo apt install mpc mpd`
+ `sudo apt-get update  
+ sudo apt-get upgrade  
+ sudo apt install mpc mpd`  
  
  Add your radio stream, in this case: https://listen.radioking.com/radio/372772/stream/422929 by running this command
  `mpc add https://listen.radioking.com/radio/372772/stream/422929`
@@ -40,10 +40,10 @@ Write a bash script (name it however you want, I named it radiotempete)
 `sudo nano radiotempete.sh`
 
 This will open a text editor in your terminal, with an empty page. Copy paste the following commands:
-`#!/bin/bash
-mpc add https://listen.radioking.com/radio/372772/stream/422929
-mpc play
-mpc volume 50
+`#!/bin/bash  
+mpc add https://listen.radioking.com/radio/372772/stream/422929  
+mpc play  
+mpc volume 50  
 `
 (I have set the volume to 50 instead of 100 because my radio was too loud, but it's optional).
 
@@ -56,7 +56,7 @@ Open your terminal and type
 `sudo nano /etc/rc.local`
 
 And copy paste this **before exit 0**
-`# Radio tempete
+`# Radio tempete  
 /home/pi/radiotempete.sh`
 
 Save and quit (Ctrl O, Ctrl X).
