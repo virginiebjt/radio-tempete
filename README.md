@@ -20,9 +20,9 @@ Connect your Raspberry Pi to a keyboard, mouse and screen, or control it with yo
 Install Music Player Daemon. This will play any webradio stream. 
 Run the following commands in your terminal
  
- `sudo apt-get update  
+ ##### sudo apt-get update  
  sudo apt-get upgrade  
- sudo apt install mpc mpd`  
+ sudo apt install mpc mpd
  
  Add your radio stream, in this case: https://listen.radioking.com/radio/372772/stream/422929 by running this command
  `mpc add https://listen.radioking.com/radio/372772/stream/422929`
